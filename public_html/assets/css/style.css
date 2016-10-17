@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Domine);
+
+body{  
+}
+
+.container { 
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+
+}
+
+h1 {
+  margin-right: auto;
+  margin-left: auto;
+  color: goldenrod;
+  font-family: 'Domine', serif;
+}
+
+h2 {
+  margin-right: auto;
+  margin-left: auto;
+  color: goldenrod;
+}
+
+.TempZone {
+  display: flex;
+}
+#iconWeat{
+  width:64px;  
+  height:64px;
+  margin-right: 7px;  
+}
+
+.ChangeUnit {
+  color: #FFF;  
+  font-size: 1.3rem;
+}
+
+.DetailZone {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 50px;  
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cadre {
+  height: 50px;
+  width: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  /*background: #FBF7E4;*/
+  paddind: 10px;
+}
+
+footer {
+  position: absolute;
+  color: #0a0909;
+}
