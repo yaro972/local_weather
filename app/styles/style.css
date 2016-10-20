@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Domine);
+body {}
+
+
+/*.container {
+  margin-right: auto;
+  margin-left: auto;
+}*/
+
+header {
+    /*background-color: #a4acac;*/    
+    text-align: center;
+}
+
+h1 {
+    margin-right: auto;
+    margin-left: auto;
+    color: rgb(51, 47, 37);
+    font-family: 'Domine', serif;
+}
+
+
+.meteo-div {
+    margin-top: 2em;    
+    background-color: black;
+    opacity: 0.1;
+    border-style: outset;
+    border-width: 0.1em;
+    border-color: black;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.TempZone {
+    display: flex;
+}
+
+#iconWeat {
+    width: 64px;
+    height: 64px;
+    margin-right: 7px;
+}
+
+.ChangeUnit {
+    color: #FFF;
+    font-size: 1.3rem;
+}
+
+.DetailZone {
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+footer {
+    position: absolute;
+    color: #0a0909;
+}

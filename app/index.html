@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Local Weather</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header Zone / Title part -->
+        <header>
+            <h1>Local Weather App</h1>
+        </header>
+        <!-- End of Header Zone / Title part -->
+
+
+        <div class="meteo-div container ">
+            <div class="row">
+                <!-- List of detail of the event -->
+                <div class="row">
+                    <div class="DetailZone">
+                        <!-- Detail part -->
+                        <div class="cadre col-md-4" id="DetailZone-City">
+                            <p>city</p>
+                        </div>
+                        <div class="cadre col-md-4" id="DetailZone-Sky">
+                            <p>sky</p>
+                        </div>
+                        <div class="cadre col-md-4" id="DetailZone-Wind">
+                            <p>wind</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of detail of the event -->
+
+            </div>
+
+            <div class="row">
+                <div class="TempZone col-offset-md-6 col-md-6">
+                    <!-- Temperature and weather zone -->
+                    <div id="iconWeat"></div>
+                    <p class="ChangeUnit" id="ChUnit">00 °F</p>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer id="footer">
+            <!-- Footer Zone -->
+            <div class="container">
+                <p class="text-center">Copyright (c) Thierry ARONOFF</p>
+                <p class="text-center">May 2016</p>
+            </div>
+        </footer>
+        <!-- End of Footer Zone -->
+    </div>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="script/app.js"></script>
+</body>
+
+</html>

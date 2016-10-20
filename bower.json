@@ -1,13 +1,32 @@
 {
-    "name": "Local_weather",
-    "version": "1.0.0",
-    "main": "path/to/main.css",
-    "ignore": [
-        ".jshintrc",
-        "**/*.txt"
-    ],
-    "dependencies": {
-    },
-    "devDependencies": {
-    }
+    "name": "local_weather",
+  "description": "An application that show the local temperature.",
+  "main": "index.js",
+  "authors": [
+    "Thierry Aronoff"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "javascript",
+    "json",
+    "ajax"
+  ],
+  "homepage": "",
+  "private": true,
+  "main": "app/styles/style.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt",
+     "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "jquery-ui": "^1.12.1",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {}
 }

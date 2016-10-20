@@ -6,6 +6,15 @@
 
 var gulp = require('gulp');
 
-gulp.task('default', function () {
-    // place code for your default task here
+var imagemin = require('gulp-imagemin');
+
+gulp.task('imgMin', function () {
+    // place code for your default task here   
+            gulp.src('app/images/*')
+            .pipe(imagemin())
+            .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('default', function(){
+    
 });
