@@ -6,69 +6,82 @@ and open the template in the editor.
 -->
 <html>
 
-<head>
-    <title>Local Weather</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="styles/style.css" rel="stylesheet" />
-</head>
+    <head>
+        <title>Local Weather</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+        <link href="styles/style.css" rel="stylesheet"/>
+    </head>
 
-<body class="body-snow">
+    <body class="body-cloud">
 
-    <div class="container">
-        <!-- Header Zone / Title part -->
-        <header>
-            <h1>Local Weather App</h1>
-        </header>
-        <!-- End of Header Zone / Title part -->
+        <div class="container">
+            <!-- Header Zone / Title part -->
+            <header>
+                <h1>Local Weather App</h1>
+            </header>
+            <!-- End of Header Zone / Title part -->
 
-        <div class="meteo-div row ">          
+            <div class="meteo-div row ">
                 <!-- List of detail of the event -->
                 <div class="container">
-                    
-                        <!-- Detail part -->
-                        <div class="cadre col-md-4 meteo-div--city" id="DetailZone-City">
-                            <p class="text-center">city</p>
-                        </div>
-                        <div class="cadre col-md-4" id="DetailZone-Sky">
-                            <div class="text-center"><img src="http://placehold.it/140x100"></div>
-                            <p class="text-center">sky</p>
-                        </div>
-                        <div class="cadre col-md-4" id="DetailZone-Wind">
-                            <div class="text-center"><img src="http://placehold.it/140x100"></div>
-                            <p class="text-center">wind</p>
-                        </div>
-                    
+
+                    <!-- Detail part -->
+
+                    <!-- Show the city name-->
+                    <div class="cadre col-md-4 meteo-div--city text-center" id="DetailZone-City">
+                      <div class="DetailZone-temp" ><p id="DetailZone-temp--temp"></p></div>
+                        <p id="DetailZone-City--name">city</p>
+                    </div>
+                    <!-- End Show the city name-->
+
+                    <!-- Block of icon sky -->
+                    <div class="cadre col-md-4 text-center" id="DetailZone-Sky">
+                        <!-- show the sun icon -->
+                        <div id="img-sun" class="img-weather" alt="Sun" width="100" height="100"><img src="images/sun.png"></div>
+                        <!-- Show the snow icon -->
+                        <div id="img-snow" class="img-weather" alt="Snow" ><img src="images/snow.png" width="100" height="100" ></div>
+                        <!-- Show the rain icon -->
+                        <div id="img-rain" class="img-weather" alt="Rain" ><img src="images/rain.png" width="100" height="100" ></div>
+                        <!-- Show the cloud icon -->
+                        <div id="img-cloud" class="img-weather" alt="Cloudly" ><img src="images/cloud.png" width="100" height="100" ></div>
+                        <p class="text-center">sky</p>
+                    </div>
+                    <!-- End Block of icon sky -->
+
+                    <!-- View of the wind position -->
+                    <div class="cadre col-md-4 text-center" id="DetailZone-Wind">
+                        <div ><img src="http://placehold.it/140x100"></div>
+                        <p>wind</p>
+                    </div>
+                    <!-- End View of the wind position -->
+
                 </div>
                 <!-- End of detail of the event -->
 
-            
-
-            <!--<div class="row">
+                <!--<div class="row">
                 <div class="TempZone col-offset-md-6 col-md-6">
                     <!-- Temperature and weather zone -->
-                    <!--<div id="iconWeat"></div>
+                <!--<div id="iconWeat"></div>
                     <p class="ChangeUnit" id="ChUnit">00 °F</p>
 
                 </div>
             </div>-->
 
-
-        </div>
-
-        <footer id="footer">
-            <!-- Footer Zone -->
-            <div class="container">
-                <p class="text-center">Copyright (c) Thierry ARONOFF</p>
-                <p class="text-center">May 2016</p>
             </div>
-        </footer>
-        <!-- End of Footer Zone -->
-    </div>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
-    <!--<script src="script/app.js"></script>-->
-</body>
+
+            <footer id="footer">
+                <!-- Footer Zone -->
+                <div class="container">
+                    <p class="text-center">Copyright (c) Thierry ARONOFF - May 2016</p>
+                </div>
+            </footer>
+            <!-- End of Footer Zone -->
+        </div>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+        <!--<script src="script/app.js"></script>-->
+    </body>
 
 </html>

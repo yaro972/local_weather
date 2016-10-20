@@ -3,28 +3,28 @@ body {
     color: #000;
 }
 
-.body-sun{
-    background-image: url('../images/sun.jpeg');
-    background-repeat: no-repeat ;
+.body-sun {
+    background-image: url('../images/bg_sun.jpg');
+    background-repeat: no-repeat;
 }
 
-.body-rain{
-    background-image: url('../images/rain.jpg');
-    background-repeat: no-repeat ;
+.body-rain {
+    background-image: url('../images/bg_rain.jpg');
+    background-repeat: no-repeat;
 }
 
-.body-cloud{
-    background-image: url('../images/cloud.jpeg');
-    background-repeat: no-repeat ;
+.body-cloud {
+    background-image: url('../images/bg_cloud.jpg');
+    background-repeat: no-repeat;
 }
 
-.body-snow{
-    background-image: url('../images/snow.jpeg');
-    background-repeat: no-repeat ;
+.body-snow {
+    background-image: url('../images/bg_snow.jpeg');
+    background-repeat: no-repeat;
 }
 
 header {
-    /*background-color: #a4acac;*/    
+    /*background-color: #a4acac;*/
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ h1 {
 }
 
 .meteo-div {
-    margin-top: 2em;    
+    margin-top: 5em;
     /*background-color: black;*/
     /*opacity: 0.1;*/
     background-color: rgba(0, 0, 0, .1);
@@ -46,17 +46,18 @@ h1 {
     padding-top: 3em;
     border-radius: 5px;
     min-height: 200px;
-    
 }
 
-.meteo-div--city{
-    margin-top: 100px; 
+.meteo-div--city {
+    /*margin-top: 100px;*/
 }
 
 
 /*.TempZone {
     display: flex;
 }*/
+
+
 /*
 #iconWeat {
     width: 64px;
@@ -76,10 +77,22 @@ h1 {
     margin-right: auto;
     margin-left: auto;
 }*/
+.DetailZone-temp{
+  min-height: 100px;
+}
+
+.img-weather {
+    display: none;
+}
+
+#img-snow {
+    display: block;
+}
 
 footer {
     position: absolute;
-    color: #0a0909;
-    bottom:0;
-    background-color: rgba(0, 0, 0, .1);
+    /*color: #0a0909;*/
+    color: rgba(124, 130, 135, .5);
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
 }
