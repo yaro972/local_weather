@@ -1,11 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Domine);
-body {}
+body {
+    color: #000;
+}
 
+.body-sun{
+    background-image: url('../images/sun.jpeg');
+    background-repeat: no-repeat ;
+}
 
-/*.container {
-  margin-right: auto;
-  margin-left: auto;
-}*/
+.body-rain{
+    background-image: url('../images/rain.jpg');
+    background-repeat: no-repeat ;
+}
+
+.body-cloud{
+    background-image: url('../images/cloud.jpeg');
+    background-repeat: no-repeat ;
+}
+
+.body-snow{
+    background-image: url('../images/snow.jpeg');
+    background-repeat: no-repeat ;
+}
 
 header {
     /*background-color: #a4acac;*/    
@@ -19,22 +35,29 @@ h1 {
     font-family: 'Domine', serif;
 }
 
-
 .meteo-div {
     margin-top: 2em;    
-    background-color: black;
-    opacity: 0.1;
+    /*background-color: black;*/
+    /*opacity: 0.1;*/
+    background-color: rgba(0, 0, 0, .1);
     border-style: outset;
     border-width: 0.1em;
     border-color: black;
-    padding: 1em;
+    padding-top: 3em;
     border-radius: 5px;
+    min-height: 200px;
+    
 }
 
-.TempZone {
+.meteo-div--city{
+    margin-top: 100px; 
+}
+
+
+/*.TempZone {
     display: flex;
-}
-
+}*/
+/*
 #iconWeat {
     width: 64px;
     height: 64px;
@@ -52,9 +75,11 @@ h1 {
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
-}
+}*/
 
 footer {
     position: absolute;
     color: #0a0909;
+    bottom:0;
+    background-color: rgba(0, 0, 0, .1);
 }

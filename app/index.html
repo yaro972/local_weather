@@ -14,7 +14,7 @@ and open the template in the editor.
     <link href="styles/style.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="body-snow">
 
     <div class="container">
         <!-- Header Zone / Title part -->
@@ -23,36 +23,36 @@ and open the template in the editor.
         </header>
         <!-- End of Header Zone / Title part -->
 
-
-        <div class="meteo-div container ">
-            <div class="row">
+        <div class="meteo-div row ">          
                 <!-- List of detail of the event -->
-                <div class="row">
-                    <div class="DetailZone">
+                <div class="container">
+                    
                         <!-- Detail part -->
-                        <div class="cadre col-md-4" id="DetailZone-City">
-                            <p>city</p>
+                        <div class="cadre col-md-4 meteo-div--city" id="DetailZone-City">
+                            <p class="text-center">city</p>
                         </div>
                         <div class="cadre col-md-4" id="DetailZone-Sky">
-                            <p>sky</p>
+                            <div class="text-center"><img src="http://placehold.it/140x100"></div>
+                            <p class="text-center">sky</p>
                         </div>
                         <div class="cadre col-md-4" id="DetailZone-Wind">
-                            <p>wind</p>
+                            <div class="text-center"><img src="http://placehold.it/140x100"></div>
+                            <p class="text-center">wind</p>
                         </div>
-                    </div>
+                    
                 </div>
                 <!-- End of detail of the event -->
 
-            </div>
+            
 
-            <div class="row">
+            <!--<div class="row">
                 <div class="TempZone col-offset-md-6 col-md-6">
                     <!-- Temperature and weather zone -->
-                    <div id="iconWeat"></div>
+                    <!--<div id="iconWeat"></div>
                     <p class="ChangeUnit" id="ChUnit">00 °F</p>
 
                 </div>
-            </div>
+            </div>-->
 
 
         </div>
@@ -68,7 +68,7 @@ and open the template in the editor.
     </div>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
-    <script src="script/app.js"></script>
+    <!--<script src="script/app.js"></script>-->
 </body>
 
 </html>
