@@ -19,7 +19,7 @@ body {
 }
 
 .body-snow {
-    background-image: url('../images/bg_snow.jpeg');
+    background-image: url('../images/bg_snow.jpg');
     background-repeat: no-repeat;
 }
 
@@ -29,14 +29,16 @@ header {
 
 h1 {
     margin-right: auto;
-    margin-left: auto;
-    color: rgb(51, 47, 37);
+    margin-left: auto;    
+    color: rgb(0,0,0);
+    
     font-family: 'Domine', serif;
+    background-color: rgba(255, 255, 255, .1);
 }
 
 .meteo-div {
-    margin-top: 5em;
-    background-color: rgba(0, 0, 0, .1);
+    margin-top: 5em;    
+    background-color: rgba(255, 255, 255, .1);
     border-style: outset;
     border-width: .1em;
     border-color: black;
