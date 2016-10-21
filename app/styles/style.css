@@ -23,8 +23,7 @@ body {
     background-repeat: no-repeat;
 }
 
-header {
-    /*background-color: #a4acac;*/
+header {    
     text-align: center;
 }
 
@@ -37,11 +36,9 @@ h1 {
 
 .meteo-div {
     margin-top: 5em;
-    /*background-color: black;*/
-    /*opacity: 0.1;*/
     background-color: rgba(0, 0, 0, .1);
     border-style: outset;
-    border-width: 0.1em;
+    border-width: .1em;
     border-color: black;
     padding-top: 3em;
     border-radius: 5px;
@@ -49,34 +46,9 @@ h1 {
 }
 
 .meteo-div--city {
-    /*margin-top: 100px;*/
+
 }
 
-
-/*.TempZone {
-    display: flex;
-}*/
-
-
-/*
-#iconWeat {
-    width: 64px;
-    height: 64px;
-    margin-right: 7px;
-}
-
-.ChangeUnit {
-    color: #FFF;
-    font-size: 1.3rem;
-}
-
-.DetailZone {
-    display: flex;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: auto;
-}*/
 .DetailZone-temp{
   min-height: 100px;
 }
@@ -89,10 +61,33 @@ h1 {
     display: block;
 }
 
-footer {
-    position: absolute;
-    /*color: #0a0909;*/
+footer {    
     color: rgba(124, 130, 135, .5);
     bottom: 0;
     background-color: rgba(0, 0, 0, .7);
+}
+
+@media screen and (min-width: 990px){
+    #DetailZone-Sky{
+        border-left: solid;
+        border-right: solid;
+        border-width: .1em;
+        border-color: white;
+    }
+
+    footer {
+        position: absolute;    
+    }
+}
+
+@media screen and (max-width: 989px){
+    #DetailZone-Sky{
+        border-top: solid;
+        border-bottom: solid;        
+        padding-top: 1.5rem;
+        padding-bottom:0.5rem;
+        margin-bottom: 1.5rem;
+        border-width: .1em;
+        border-color: white;
+    }
 }
