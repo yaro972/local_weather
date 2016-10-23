@@ -3,6 +3,10 @@ body {
     color: #000;
 }
 
+a {
+    color: black;
+}
+
 .body-sun {
     background-image: url('../images/bg_sun.jpg');
     background-repeat: no-repeat;
@@ -55,13 +59,18 @@ h1 {
   min-height: 100px;
 }
 
+#DetailZone-temp--temp{
+    font-size: 4em;
+}
+
 .img-weather {
     display: none;
 }
 
-#img-snow {
-    display: block;
+.weather-descp{
+    font-size: 0.5em;
 }
+
 
 footer {    
     color: rgba(124, 130, 135, .5);
