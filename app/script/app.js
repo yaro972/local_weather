@@ -57,7 +57,7 @@ function getLocation() {
                             // document.getElementById("img-rain").style.display = "block";
                             // document.getElementById("weather-description").innerHTML = this.response.weather[0].description;
                             // document.getElementById("body").className += "body-rain";
-                            document.documentElement.childNodes[2].className += "body-rain";
+                            document.documentElement.childNodes[2].className += " body-rain";
                             break;
 
                         case "Sun":

@@ -38,12 +38,16 @@ h1 {
     color: rgb(0,0,0);
     
     font-family: 'Domine', serif;
-    background-color: rgba(255, 255, 255, .1);
+    background-color: rgba(228, 224, 224, 0.5);
+    border-style: outset;
+    border-width: .1em;
+    border-color: black;    
+    border-radius: 5px;
 }
 
 .meteo-div {
     margin-top: 5em;    
-    background-color: rgba(255, 255, 255, .1);
+    background-color: rgba(228, 224, 224, 0.5);
     border-style: outset;
     border-width: .1em;
     border-color: black;
