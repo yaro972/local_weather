@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Domine);
 body {
     color: #000;
+    background-color: #7c7c7c;
 }
 
 a {
@@ -79,11 +80,12 @@ footer {
 }
 
 @media screen and (min-width: 990px){
-    #DetailZone-Sky{
+    #DetailZone-Time{
         border-left: solid;
         border-right: solid;
         border-width: .1em;
         border-color: white;
+        font-size: 2.5em;
     }
 
     footer {
@@ -92,7 +94,7 @@ footer {
 }
 
 @media screen and (max-width: 989px){
-    #DetailZone-Sky{
+    #DetailZone-Time{
         border-top: solid;
         border-bottom: solid;        
         padding-top: 1.5rem;
@@ -100,5 +102,6 @@ footer {
         margin-bottom: 1.5rem;
         border-width: .1em;
         border-color: white;
+        font-size: 2.5em;
     }
 }

@@ -38,19 +38,15 @@ function getLocation() {
                     document.getElementById('DetailZone-City--name').innerHTML = this.response.name;
 
                     //Set temperature
-                    document.getElementById("DetailZone-temp--temp").innerHTML = "<a>" + 
-                    '<img src="http://openweathermap.org/img/w/' + 
-                    this.response.weather[0].icon +'.png" alt="weather of today ' 
-                    + this.response.weather[0].description +'" />'
-                    + Math.floor(this.response.main.temp) + " °C</a>"
-                    + '<p class="weather-descp">'+ this.response.weather[0].description +"</p>";
+                    document.getElementById("DetailZone-temp--temp").innerHTML = "<a>" +
+                        '<img src="http://openweathermap.org/img/w/' +
+                        this.response.weather[0].icon + '.png" alt="weather of today ' +
+                        this.response.weather[0].description + '" />' +
+                        Math.floor(this.response.main.temp) + "°C</a>" +
+                        '<p class="weather-descp">' + this.response.weather[0].description + "</p>";
 
                     // Show weather
                     // var weather = document.getElementsByClassName("img-weather").style.display="none";
-                    for (var i = 0; i < document.getElementsByClassName("img-weather").length; i++) {
-                        document.getElementsByClassName("img-weather")[i].style.display = "none";
-                    }
-
 
                     // document.getElementById("DetailZone-Sky").innerHTML =                  '<img src="http://openweathermap.org/img/w/' + 
                     // this.response.weather[0].icon +'.png" alt="weather of today ' 
@@ -58,17 +54,25 @@ function getLocation() {
 
                     switch (this.response.weather[0].main) {
                         case "Rain":
-                            document.getElementById("img-rain").style.display = "block";
-                            document.getElementById("weather-description").innerHTML = this.response.weather[0].description;
+                            // document.getElementById("img-rain").style.display = "block";
+                            // document.getElementById("weather-description").innerHTML = this.response.weather[0].description;
                             // document.getElementById("body").className += "body-rain";
                             document.documentElement.childNodes[2].className += "body-rain";
                             break;
 
                         case "Sun":
-                            document.getElementById("img-sun").style.display = "block";
-                            document.getElementById("weather-description").innerHTML = this.response.weather[0].description;
+                            // document.getElementById("img-sun").style.display = "block";
+                            // document.getElementById("weather-description").innerHTML = this.response.weather[0].description;
+                            document.documentElement.childNodes[2].className += "body-sun";
                             break;
 
+                        case 'Cloud':
+                            document.documentElement.childNodes[2].className += "body-cloud";
+                            break;
+
+                        case 'Snow':
+                            document.documentElement.childNodes[2].className += "body-snow";
+                            break;
 
                         default:
                             console.log('Default');
@@ -76,6 +80,17 @@ function getLocation() {
                     console.log(document.getElementsByClassName("img-weather"));
 
                     console.log(this.response.coord);
+
+                    // Add time and date
+
+                    setInterval(function () {
+                        var tempsEnMs = new Date(Date.now());
+
+                        document.getElementById("DetailZone-Time").innerHTML =
+                            '<p>' + (tempsEnMs.getHours() + 1) + ":" + tempsEnMs.getMinutes() + ":" + tempsEnMs.getSeconds() + '</p>' // Format time
+                            +
+                            '<p>' + (tempsEnMs.getDate() + 1) + "/" + tempsEnMs.getMonth() + "/" + tempsEnMs.getFullYear() + '</p>'; // Format date
+                    }, 120);
 
                 }
             };
@@ -101,6 +116,7 @@ function getLocation() {
     }
 
 };
+
 
 
 getLocation();
