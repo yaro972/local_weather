@@ -18,6 +18,17 @@ function convKtoC(temp) {
     return Math.floor(temp - 273.15);
 };
 
+function toDouble(p_number) {
+    var numToDbl = "";
+
+    if (p_number < 10) {
+        numToDbl += "0" + p_number;
+    } else {
+        numToDbl += p_number;
+    }
+    
+    return numToDbl;
+}
 
 function getLocation() {
     // Call the geolocation
@@ -25,7 +36,8 @@ function getLocation() {
         // Geolocation enabled 
         navigator.geolocation.getCurrentPosition(function (pos) {
             // Get latitude and longitude, in the pos object
-            // items pos.coords.longitude and pos.coords.latitude            
+            // items pos.coords.longitude and 
+            // pos.coords.latitude            
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -86,10 +98,12 @@ function getLocation() {
                     setInterval(function () {
                         var tempsEnMs = new Date(Date.now());
 
+
+
                         document.getElementById("DetailZone-Time").innerHTML =
-                            '<p>' + (tempsEnMs.getHours() + 1) + ":" + tempsEnMs.getMinutes() + ":" + tempsEnMs.getSeconds() + '</p>' // Format time
+                            '<p>' + toDouble(tempsEnMs.getHours()) + ":" + toDouble(tempsEnMs.getMinutes()) + ":" + toDouble(tempsEnMs.getSeconds()) + '</p>' // Format time
                             +
-                            '<p>' + (tempsEnMs.getDate() + 1) + "/" + tempsEnMs.getMonth() + "/" + tempsEnMs.getFullYear() + '</p>'; // Format date
+                            '<p>' + toDouble(tempsEnMs.getDate() + 1) + "/" + toDouble(tempsEnMs.getMonth()) + "/" + toDouble(tempsEnMs.getFullYear()) + '</p>'; // Format date
                     }, 120);
 
                 }
@@ -118,5 +132,4 @@ function getLocation() {
 };
 
 
-
-getLocation();
+ getLocation();
