@@ -1,13 +1,5 @@
 'use strict';
 
-// var app =(function(){
-
-var meteoLive = {
-    url: "http://api.openweathermap.org/data/2.5/weather?",
-    appid: "&APPID=b26dd00efbc7410a76d9b6d4e9272b6c",
-    error: ""
-};
-
 // Function to convert Kelvin to Farenheit
 function convKtoF(temp) {
     return Math.floor(temp * 9 / 5 - 459.69);
@@ -30,22 +22,26 @@ function toDouble(p_number) {
     return numToDbl;
 }
 
+function showWind(direction) {
+    direction = -1 * (90 - direction);
+    var img = document.getElementById("compassDirection");
+
+    img.style.transform = "rotate(" + direction + "deg)";
+}
+
 function getLocation() {
     // Call the geolocation
     if (navigator.geolocation) {
         // Geolocation enabled
-        navigator.geolocation.getCurrentPosition(function (pos) {
+        navigator.geolocation.getCurrentPosition(function(pos) {
             // Get latitude and longitude, in the pos object
             // items pos.coords.longitude and
             // pos.coords.latitude
 
             var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
+            xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    // document.getElementById("demo").innerHTML =
-                    //     this.responseText;
-                    // var result=this.responseText;
-
+                   
                     // Show position
                     document.getElementById('DetailZone-City--name').innerHTML = this.response.name;
 
@@ -57,24 +53,12 @@ function getLocation() {
                         Math.floor(this.response.main.temp) + "°C</a>" +
                         '<p class="weather-descp">' + this.response.weather[0].description + "</p>";
 
-                    // Show weather
-                    // var weather = document.getElementsByClassName("img-weather").style.display="none";
-
-                    // document.getElementById("DetailZone-Sky").innerHTML =                  '<img src="http://openweathermap.org/img/w/' +
-                    // this.response.weather[0].icon +'.png" alt="weather of today '
-                    // + this.response.weather[0].description +'" />';
-
                     switch (this.response.weather[0].main) {
                         case "Rain":
-                            // document.getElementById("img-rain").style.display = "block";
-                            // document.getElementById("weather-description").innerHTML = this.response.weather[0].description;
-                            // document.getElementById("body").className += "body-rain";
                             document.documentElement.childNodes[2].className += " body-rain";
                             break;
 
                         case "Sun":
-                            // document.getElementById("img-sun").style.display = "block";
-                            // document.getElementById("weather-description").innerHTML = this.response.weather[0].description;
                             document.documentElement.childNodes[2].className += "body-sun";
                             break;
 
@@ -89,13 +73,10 @@ function getLocation() {
                         default:
                             console.log('Default');
                     }
-                    console.log(document.getElementsByClassName("img-weather"));
-
-                    console.log(this.response.coord);
 
                     // Add time and date
 
-                    setInterval(function () {
+                    setInterval(function() {
                         var tempsEnMs = new Date(Date.now());
 
 
@@ -105,6 +86,8 @@ function getLocation() {
                             +
                             '<p class="DetailZone-Time--date">' + toDouble(tempsEnMs.getDate() + 1) + "/" + toDouble(tempsEnMs.getMonth()) + "/" + toDouble(tempsEnMs.getFullYear()) + '</p>'; // Format date
                     }, 120);
+                    console.log(this.response.wind.deg)
+                    showWind(this.response.wind.deg);
 
                 }
             };
@@ -126,10 +109,10 @@ function getLocation() {
         });
 
     } else {
-        error += "Geolocation is not supported by this browser.";
+        alert("Geolocation is not supported by this browser.");
     }
 
 };
 
 
- getLocation();
+getLocation();

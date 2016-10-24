@@ -2,4 +2,6 @@ gitignore.io help:
 list - lists the operating systems, programming languages and IDE input types
 :types: - creates .gitignore files for types of operating systems, programming languages or IDEs
 app/bower_components
-node_modules
+node_modules/
+.eslintrc.json
+app/images/.directory
