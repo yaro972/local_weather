@@ -105,7 +105,7 @@ function getWeather(longitude, latitude, unit) {
 
             //Set temperature
             displayTemp(this.response.weather[0].icon, this.response.weather[0].description, this.response.main.temp)
-              
+
             // Change background images
             adjustBackground(this.response.weather[0].main);
 
@@ -162,6 +162,7 @@ getLocation();
 
 
 // Add time and date
+
 setInterval(function() {
-    displayTime()
-}, 120);
+    displayTime();
+}, 1000);
