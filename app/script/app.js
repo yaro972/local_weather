@@ -16,7 +16,7 @@ function convKtoF(temp) {
 // Function to convert Kelvin to Celsius
 function convKtoC(temp) {
     return Math.floor(temp - 273.15);
-};
+}
 
 function toDouble(p_number) {
     var numToDbl = "";
@@ -26,25 +26,25 @@ function toDouble(p_number) {
     } else {
         numToDbl += p_number;
     }
-    
+
     return numToDbl;
 }
 
 function getLocation() {
     // Call the geolocation
     if (navigator.geolocation) {
-        // Geolocation enabled 
+        // Geolocation enabled
         navigator.geolocation.getCurrentPosition(function (pos) {
             // Get latitude and longitude, in the pos object
-            // items pos.coords.longitude and 
-            // pos.coords.latitude            
+            // items pos.coords.longitude and
+            // pos.coords.latitude
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     // document.getElementById("demo").innerHTML =
                     //     this.responseText;
-                    // var result=this.responseText;            
+                    // var result=this.responseText;
 
                     // Show position
                     document.getElementById('DetailZone-City--name').innerHTML = this.response.name;
@@ -60,8 +60,8 @@ function getLocation() {
                     // Show weather
                     // var weather = document.getElementsByClassName("img-weather").style.display="none";
 
-                    // document.getElementById("DetailZone-Sky").innerHTML =                  '<img src="http://openweathermap.org/img/w/' + 
-                    // this.response.weather[0].icon +'.png" alt="weather of today ' 
+                    // document.getElementById("DetailZone-Sky").innerHTML =                  '<img src="http://openweathermap.org/img/w/' +
+                    // this.response.weather[0].icon +'.png" alt="weather of today '
                     // + this.response.weather[0].description +'" />';
 
                     switch (this.response.weather[0].main) {
@@ -101,9 +101,9 @@ function getLocation() {
 
 
                         document.getElementById("DetailZone-Time").innerHTML =
-                            '<p>' + toDouble(tempsEnMs.getHours()) + ":" + toDouble(tempsEnMs.getMinutes()) + ":" + toDouble(tempsEnMs.getSeconds()) + '</p>' // Format time
+                            '<p class="DetailZone-Time--hour">' + toDouble(tempsEnMs.getHours()) + ":" + toDouble(tempsEnMs.getMinutes()) + ":" + toDouble(tempsEnMs.getSeconds()) + '</p>' // Format time
                             +
-                            '<p>' + toDouble(tempsEnMs.getDate() + 1) + "/" + toDouble(tempsEnMs.getMonth()) + "/" + toDouble(tempsEnMs.getFullYear()) + '</p>'; // Format date
+                            '<p class="DetailZone-Time--date">' + toDouble(tempsEnMs.getDate() + 1) + "/" + toDouble(tempsEnMs.getMonth()) + "/" + toDouble(tempsEnMs.getFullYear()) + '</p>'; // Format date
                     }, 120);
 
                 }
