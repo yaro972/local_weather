@@ -37,12 +37,12 @@ h1 {
     margin-left: auto;
     color: rgb(0, 0, 0);
     font-family: 'Domine', serif;
-    background-color: rgba(228, 224, 224, 0.5);   
+    background-color: rgba(228, 224, 224, 0.5);
 }
 
 .meteo-div {
     margin-top: 5em;
-    background-color: rgba(228, 224, 224, 0.5);    
+    background-color: rgba(228, 224, 224, 0.5);
     padding-top: 3em;
     min-height: 200px;
 }
@@ -72,7 +72,7 @@ h1 {
 }
 
 #DetailZone-Wind--direction {
-    background-image: url('../images/Simple_compass_rose-fr.svg.png');
+    background-image: url('../images/compass.png');
     background-size: 120px;
     width: 120px;
     height: 120px;

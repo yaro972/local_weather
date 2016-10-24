@@ -4,7 +4,9 @@
   "description": "An application that show the local temperature.",
   "main": "index.js",
   "scripts": {
-    "test": "karma test"
+    "pretest": "npm install",     
+    "test": "karma start karma.conf.js",     
+    "test-single-run": "karma start karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
