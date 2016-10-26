@@ -79,7 +79,8 @@ function adjustBackground(weather) {
         case "Rain":
             bodyPart.className = " body-rain";
             break;
-
+        
+        case "Clear":
         case "Sun":
             bodyPart.className = "body-sun";
             break;
@@ -94,7 +95,7 @@ function adjustBackground(weather) {
 
         default:
             console.log('Default case');
-            console.log('Erro : No background defined for ', weather);
+            console.log('Error : No background defined for ', weather);
     }
 };
 
@@ -175,11 +176,12 @@ function getLocation() {
 
 };
 
+// On click, we change the temperature unit
 function changeTemp() {
     if (units == "metric") {
-        units = "imperial";
+        units = "imperial"; // Farenheit
     } else {
-        units = "metric";
+        units = "metric"; // Degres
     }
 
     getWeather(local.longitude, local.latitude, units);
