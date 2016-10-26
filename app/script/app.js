@@ -99,7 +99,7 @@ function adjustBackground(weather) {
 };
 
 function displayTemp(icon, description, temperature, extension) {
-    tempDisplay.innerHTML = '<button onclick="changeTemp()">' +
+    tempDisplay.innerHTML = '<button onclick="changeTemp()" class="btn btn-default btn-lg">' +
         '<img src="http://openweathermap.org/img/w/' +
         icon + '.png" alt="weather of today ' +
         description + '" />' +
@@ -175,7 +175,7 @@ function getLocation() {
 
 };
 
-function changeTemp(){
+function changeTemp() {
     if (units == "metric") {
         units = "imperial";
     } else {
