@@ -8,6 +8,7 @@ var url = "http://api.openweathermap.org/data/2.5/weather?" +
     "APPID=b26dd00efbc7410a76d9b6d4e9272b6c";
 
 var units = "metric";
+//  var units = "imperial";
 
 // Liste of element of Html saved to improved change
 // Image for direction
@@ -97,13 +98,13 @@ function adjustBackground(weather) {
     }
 };
 
-function displayTemp(icon, description, temperature) {
-    tempDisplay.innerHTML = "<a>" +
+function displayTemp(icon, description, temperature, extension) {
+    tempDisplay.innerHTML = '<button onclick="changeTemp()">' +
         '<img src="http://openweathermap.org/img/w/' +
         icon + '.png" alt="weather of today ' +
         description + '" />' +
-        Math.floor(temperature) + "°C</a>" +
-        '<p class="weather-descp">' + description + "</p>";
+        Math.floor(temperature) + extension + '</button>' +
+        '<p class="weather-descp">' + description + '</p>';
 };
 
 
@@ -116,7 +117,12 @@ function getWeather(longitude, latitude, unit) {
             showCity(this.response.name);
 
             //Set temperature
-            displayTemp(this.response.weather[0].icon, this.response.weather[0].description, this.response.main.temp)
+            if (unit == "metric") {
+                displayTemp(this.response.weather[0].icon, this.response.weather[0].description, this.response.main.temp, '°C')
+            } else {
+                displayTemp(this.response.weather[0].icon, this.response.weather[0].description, this.response.main.temp, '°F')
+            }
+
 
             // Change background images
             adjustBackground(this.response.weather[0].main);
@@ -168,6 +174,16 @@ function getLocation() {
     }
 
 };
+
+function changeTemp(){
+    if (units == "metric") {
+        units = "imperial";
+    } else {
+        units = "metric";
+    }
+
+    getWeather(local.longitude, local.latitude, units);
+}
 
 // Get the location
 bodyPart.className = "body-night";

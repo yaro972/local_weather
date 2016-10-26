@@ -71,6 +71,12 @@ h1 {
     display: none;
 }
 
+button {
+    background-color: rgb(137, 136, 138);
+    /*border-color: black;*/
+    border-bottom-color: black;
+}
+
 .DetailZone-temp {
     min-height: 100px;
 }
