@@ -1,12 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Domine);
+html,
+body {
+    height: 100%;
+}
+
 body {
     color: #000;
     background-color: #7c7c7c;
+    height: 100%;
 }
 
-a {
-    color: black;
+header {
+    text-align: center;
 }
+
+
+/*
+*   Set template for background changes
+*/
 
 .body-sun {
     background-image: url('../images/bg_sun.jpg');
@@ -28,8 +39,15 @@ a {
     background-repeat: no-repeat;
 }
 
-header {
-    text-align: center;
+
+/* End  of background part */
+
+.main {
+    height: 96%;
+}
+
+a {
+    color: black;
 }
 
 h1 {
@@ -74,16 +92,21 @@ h1 {
 #DetailZone-Wind--direction {
     background-image: url('../images/compass.png');
     background-size: 120px;
-    width: 120px;
-    height: 120px;
     display: inline-block;
 }
 
+
+/* Footer*/
+
 footer {
     color: rgba(124, 130, 135, .5);
-    bottom: 0;
     background-color: rgba(0, 0, 0, .7);
 }
+
+
+/*
+    Mediaqueries parts
+*/
 
 @media screen and (min-width: 990px) {
     #DetailZone-Time {
@@ -92,9 +115,6 @@ footer {
         border-width: .1em;
         border-color: black;
         font-size: 2.5em;
-    }
-    footer {
-        position: absolute;
     }
 }
 
@@ -110,3 +130,8 @@ footer {
         font-size: 2.5em;
     }
 }
+
+
+/*
+    End Mediaqueries parts
+*/

@@ -15,20 +15,16 @@ and open the template in the editor.
 </head>
 
 <body>
-
-    <div class="container">
+    <div class="container main">
         <!-- Header Zone / Title part -->
         <header>
             <h1>Local Weather App</h1>
         </header>
         <!-- End of Header Zone / Title part -->
-
         <div class="meteo-div row ">
             <!-- List of detail of the event -->
             <div class="container">
-
                 <!-- Detail part -->
-
                 <!-- Show the city name-->
                 <div class="cadre col-md-4 meteo-div--city text-center" id="DetailZone-City">
                     <div class="DetailZone-temp">
@@ -37,45 +33,33 @@ and open the template in the editor.
                     <p id="DetailZone-City--name">city</p>
                 </div>
                 <!-- End Show the city name-->
-
                 <!-- Block of icon sky -->
                 <div class="cadre col-md-4 text-center" id="DetailZone-Time">
                     <p id="time-show" class="text-center">sky</p>
                 </div>
                 <!-- End Block of icon sky -->
-
                 <!-- View of the wind position -->
                 <div class="cadre col-md-4 text-center col-offset-md-4" id="DetailZone-Wind">
-
                     <div id="DetailZone-Wind--direction">
                         <img id="compassDirection" src="images/dir_compass.png" heigth="120" width="120" alt="" />
                     </div>
                     <p id="DetailZone-Wind--Speed"></p>
                 </div>
                 <!-- End View of the wind position -->
-
             </div>
             <!-- End of detail of the event -->
-
-            <!--<div class="row">
-                <div class="TempZone col-offset-md-6 col-md-6">
-                    <!-- Temperature and weather zone -->
-            <!--<div id="iconWeat"></div>
-                    <p class="ChangeUnit" id="ChUnit">00 °F</p>
-
-                </div>
-            </div>-->
-
         </div>
+    </div>
+    <!-- Footer Zone -->
+    <footer id="footer">
+        <div class="container">
 
-        <footer id="footer">
-            <!-- Footer Zone -->
             <div class="container">
                 <p class="text-center">Copyright (c) Thierry ARONOFF - May 2016</p>
             </div>
-        </footer>
-        <!-- End of Footer Zone -->
-    </div>
+        </div>
+    </footer>
+    <!-- End of Footer Zone -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <script src="script/app.js"></script>
