@@ -3,6 +3,10 @@
 // Global variable
 var local = {};
 
+// Url to get data
+var url = "http://api.openweathermap.org/data/2.5/weather?" +
+    "APPID=b26dd00efbc7410a76d9b6d4e9272b6c";
+
 // Liste of element of Html saved to improved change
 // Image for direction
 var imgDirection = document.getElementById("compassDirection");
@@ -24,6 +28,7 @@ function setLocalisation(pos) {
 };
 
 function toDouble(p_number) {
+    // Add a 0 to get a number with two digits e.g. 6 -> 06 , 9 -> 09
     var numToDbl = "";
 
     if (p_number < 10) {
@@ -46,12 +51,13 @@ function showWind(direction, speed) {
     windSpeed.innerHTML = "Speed : " + speed + " meter/sec";
 };
 
-// Write the position of the user
+// Write the city of the user
 function showCity(city) {
     locationCity.innerHTML = city;
 };
 
 function displayTime() {
+    // Write the time and date
     var tempsEnMs = new Date(Date.now());
 
     // Time part
@@ -63,6 +69,7 @@ function displayTime() {
 };
 
 function adjustBackground(weather) {
+    // function used to change the background screen
     switch (weather) {
         case "Rain":
             bodyPart.className += " body-rain";
@@ -72,7 +79,7 @@ function adjustBackground(weather) {
             bodyPart.className += "body-sun";
             break;
 
-        case 'Cloud':
+        case 'Clouds':
             bodyPart.className += "body-cloud";
             break;
 
@@ -81,7 +88,8 @@ function adjustBackground(weather) {
             break;
 
         default:
-            console.log('Default');
+            console.log('Default case');
+            console.log('Erro : No background defined for ', weather);
     }
 };
 
@@ -117,18 +125,14 @@ function getWeather(longitude, latitude, unit) {
     // Set the response type to JSON
     xhttp.responseType = "json";
 
-    // Create the full url
-    var url = "http://api.openweathermap.org/data/2.5/weather?" +
-        "lat=" + latitude +
+    // Create the full url    
+    url += "&lat=" + latitude +
         "&lon=" + longitude +
-        "&APPID=b26dd00efbc7410a76d9b6d4e9272b6c" +
         "&units=" + unit;
 
     xhttp.open("GET", url, true);
     //Send the request
     xhttp.send();
-
-
 };
 
 function getLocation() {
@@ -148,7 +152,7 @@ function getLocation() {
                 console.log(local.latitude);
                 getWeather(local.longitude, local.latitude, "metric");
 
-            }, 300000);
+            }, 7200000);
         })
 
     } else {
