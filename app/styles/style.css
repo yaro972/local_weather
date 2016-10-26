@@ -6,7 +6,7 @@ body {
 
 body {
     color: #000;
-    background-color: #7c7c7c;
+    /*background-color: #7c7c7c;*/
     height: 100%;
 }
 
@@ -39,6 +39,11 @@ header {
     background-repeat: no-repeat;
 }
 
+.body-night {
+    background-image: url('../images/bg_night.jpg');
+    background-repeat: no-repeat;
+}
+
 
 /* End  of background part */
 
@@ -63,6 +68,7 @@ h1 {
     background-color: rgba(228, 224, 224, 0.5);
     padding-top: 3em;
     min-height: 200px;
+    display: none;
 }
 
 .DetailZone-temp {

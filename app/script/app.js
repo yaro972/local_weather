@@ -7,6 +7,8 @@ var local = {};
 var url = "http://api.openweathermap.org/data/2.5/weather?" +
     "APPID=b26dd00efbc7410a76d9b6d4e9272b6c";
 
+var units = "metric";
+
 // Liste of element of Html saved to improved change
 // Image for direction
 var imgDirection = document.getElementById("compassDirection");
@@ -20,6 +22,8 @@ var timeDisplay = document.getElementById("DetailZone-Time");
 var tempDisplay = document.getElementById("DetailZone-temp--temp");
 // body element
 var bodyPart = document.documentElement.childNodes[2];
+// Main part
+var meteoDiv = document.getElementsByClassName("meteo-div");
 
 // Function to store the location
 function setLocalisation(pos) {
@@ -72,19 +76,19 @@ function adjustBackground(weather) {
     // function used to change the background screen
     switch (weather) {
         case "Rain":
-            bodyPart.className += " body-rain";
+            bodyPart.className = " body-rain";
             break;
 
         case "Sun":
-            bodyPart.className += "body-sun";
+            bodyPart.className = "body-sun";
             break;
 
         case 'Clouds':
-            bodyPart.className += "body-cloud";
+            bodyPart.className = "body-cloud";
             break;
 
         case 'Snow':
-            bodyPart.className += "body-snow";
+            bodyPart.className = "body-snow";
             break;
 
         default:
@@ -120,6 +124,9 @@ function getWeather(longitude, latitude, unit) {
             // Show the direction of the Wind
             showWind(this.response.wind.deg, this.response.wind.speed);
         }
+
+        meteoDiv[0].style.display = "block";
+        console.log('Get location');
     };
 
     // Set the response type to JSON
@@ -129,7 +136,7 @@ function getWeather(longitude, latitude, unit) {
     url += "&lat=" + latitude +
         "&lon=" + longitude +
         "&units=" + unit;
-
+    console.log(url);
     xhttp.open("GET", url, true);
     //Send the request
     xhttp.send();
@@ -137,8 +144,9 @@ function getWeather(longitude, latitude, unit) {
 
 function getLocation() {
     // Call the geolocation
+
     if (navigator.geolocation) {
-        // Geolocation enabled
+        // Geolocation enabled        
         navigator.geolocation.getCurrentPosition(function(pos) {
             // Get latitude and longitude, in the pos object
             // items pos.coords.longitude and
@@ -146,11 +154,11 @@ function getLocation() {
 
             setLocalisation(pos);
 
-            getWeather(local.longitude, local.latitude, "metric");
+            getWeather(local.longitude, local.latitude, units);
             // to get the weather
             setInterval(function() {
                 console.log(local.latitude);
-                getWeather(local.longitude, local.latitude, "metric");
+                getWeather(local.longitude, local.latitude, units);
 
             }, 7200000);
         })
@@ -162,8 +170,8 @@ function getLocation() {
 };
 
 // Get the location
+bodyPart.className = "body-night";
 getLocation();
-
 
 // Add time and date
 
