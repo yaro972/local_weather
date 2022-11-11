@@ -6,57 +6,54 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Local Weather</title>
-    <link href="./assets/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="styles/style.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="container main">
+<div class="container">
     <!-- Header Zone / Title part -->
     <header>
         <h1>Local Weather App</h1>
     </header>
     <!-- End of Header Zone / Title part -->
-    <div class="meteo-div row ">
+    <div class="meteo-container card-container">
         <!-- List of detail of the event -->
-        <div class="container">
             <!-- Detail part -->
             <!-- Show the city name-->
-            <div class="cadre col-md-4 meteo-div--city text-center" id="DetailZone-City">
-                <div class="DetailZone-temp">
-                    <p id="DetailZone-temp--temp"></p>
-                </div>
+            <div id="DetailZone-City" class="meteo-container-part">
+                <p id="DetailZone-temp--temp"> 20°C</p>
+
                 <p id="DetailZone-City--name">city</p>
             </div>
             <!-- End Show the city name-->
+
             <!-- Block of icon sky -->
-            <div class="cadre col-md-4 text-center" id="DetailZone-Time">
+            <div class="meteo-container-part" id="DetailZone-Time">
                 <p id="time-show" class="text-center">sky</p>
             </div>
             <!-- End Block of icon sky -->
+
             <!-- View of the wind position -->
-            <div class="cadre col-md-4 text-center col-offset-md-4" id="DetailZone-Wind">
+            <div class="meteo-container-part" id="DetailZone-Wind">
                 <div id="DetailZone-Wind--direction">
-                    <img id="compassDirection" src="assets/images/dir_compass.png" height="120" width="120" alt="" />
+                    <img id="compassDirection" src="assets/images/dir_compass.png" height="120" width="120"
+                         alt="Compass"/>
                 </div>
                 <p id="DetailZone-Wind--Speed"></p>
             </div>
             <!-- End View of the wind position -->
-        </div>
-        <!-- End of detail of the event -->
     </div>
-</div>
-<!-- Footer Zone -->
-<footer id="footer">
-    <div class="container">
+    <!-- End of detail of the event -->
 
-        <div class="container">
-            <p class="text-center">Copyright (c) Thierry ARONOFF - May 2016</p>
-        </div>
-    </div>
-</footer>
+    <!-- Footer Zone -->
+    <footer id="footer">
+        <p class="text-center">Copyright (c) Thierry ARONOFF - May 2016</p>
+    </footer>
+</div>
 <!-- End of Footer Zone -->
-<script src="./assets/bower_components/jquery/dist/jquery.js"></script>
-<script src="./assets/bower_components/jquery-ui/jquery-ui.js"></script>
+
 <script src="script/app.js" type="module"></script>
+<script const app=window.app;
+        app.init()
+></script>
 </body>
 </html>
