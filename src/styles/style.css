@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Domine);
+
 html,
 body {
     height: 100%;
@@ -20,27 +21,27 @@ header {
 */
 
 .body-sun {
-    background-image: url('../images/bg_sun.jpg');
+    background-image: url('../assets/images/bg_sun.jpg');
     background-repeat: no-repeat;
 }
 
 .body-rain {
-    background-image: url('../images/bg_rain.jpg');
+    background-image: url('../assets/images/bg_rain.jpg');
     background-repeat: no-repeat;
 }
 
 .body-cloud {
-    background-image: url('../images/bg_cloud.jpg');
+    background-image: url('../assets/images/bg_cloud.jpg');
     background-repeat: no-repeat;
 }
 
 .body-snow {
-    background-image: url('../images/bg_snow.jpg');
+    background-image: url('../assets/images/bg_snow.jpg');
     background-repeat: no-repeat;
 }
 
 .body-night {
-    background-image: url('../images/bg_night.jpg');
+    background-image: url('../assets/images/bg_night.jpg');
     background-repeat: no-repeat;
 }
 
@@ -72,7 +73,7 @@ h1 {
 }
 
 .btn {
-    background-color: rgb(137, 136, 138);   
+    background-color: rgb(137, 136, 138);
 }
 
 .DetailZone-temp {
@@ -100,7 +101,7 @@ h1 {
 }
 
 #DetailZone-Wind--direction {
-    background-image: url('../images/compass.png');
+    background-image: url('../assets/images/compass.png');
     background-size: 120px;
     display: inline-block;
 }
