@@ -4,8 +4,7 @@
 var local = {};
 
 // Url to get data
-var url = "http://api.openweathermap.org/data/2.5/weather?" +
-    "APPID=b26dd00efbc7410a76d9b6d4e9272b6c";
+var url = "https://api.openweathermap.org/data/2.5/weather?APPID=b26dd00efbc7410a76d9b6d4e9272b6c";
 
 var units = "metric";
 //  var units = "imperial";
@@ -30,7 +29,7 @@ var meteoDiv = document.getElementsByClassName("meteo-div");
 function setLocalisation(pos) {
     local.longitude = pos.coords.longitude;
     local.latitude = pos.coords.latitude;
-};
+}
 
 function toDouble(p_number) {
     // Add a 0 to get a number with two digits e.g. 6 -> 06 , 9 -> 09
@@ -43,7 +42,7 @@ function toDouble(p_number) {
     }
 
     return numToDbl;
-};
+}
 
 // Show the wind direction and the speed
 function showWind(direction, speed) {
@@ -54,12 +53,12 @@ function showWind(direction, speed) {
 
     // Add the speed of the wind
     windSpeed.innerHTML = "Speed : " + speed + " meter/sec";
-};
+}
 
 // Write the city of the user
 function showCity(city) {
     locationCity.innerHTML = city;
-};
+}
 
 function displayTime() {
     // Write the time and date
@@ -71,7 +70,7 @@ function displayTime() {
         +
         // Date part
         '<p class="DetailZone-Time--date">' + toDouble(tempsEnMs.getDate() + 1) + "/" + toDouble(tempsEnMs.getMonth()) + "/" + toDouble(tempsEnMs.getFullYear()) + '</p>'; // Format date
-};
+}
 
 function adjustBackground(weather) {
     // function used to change the background screen
@@ -97,7 +96,7 @@ function adjustBackground(weather) {
             console.log('Default case');
             console.log('Error : No background defined for ', weather);
     }
-};
+}
 
 function displayTemp(icon, description, temperature, extension) {
     tempDisplay.innerHTML = '<button onclick="changeTemp()" class="btn btn-default btn-lg">' +
@@ -106,19 +105,19 @@ function displayTemp(icon, description, temperature, extension) {
         description + '" />' +
         Math.floor(temperature) + extension + '</button>' +
         '<p class="weather-descp">' + description + '</p>';
-};
+}
 
 
 function getWeather(longitude, latitude, unit) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
 
             // Show position
             showCity(this.response.name);
 
             //Set temperature
-            if (unit == "metric") {
+            if (unit === "metric") {
                 displayTemp(this.response.weather[0].icon, this.response.weather[0].description, this.response.main.temp, '°C')
             } else {
                 displayTemp(this.response.weather[0].icon, this.response.weather[0].description, this.response.main.temp, '°F')
@@ -147,7 +146,7 @@ function getWeather(longitude, latitude, unit) {
     xhttp.open("GET", url, true);
     //Send the request
     xhttp.send();
-};
+}
 
 function getLocation() {
     // Call the geolocation
@@ -174,11 +173,11 @@ function getLocation() {
         alert("Geolocation is not supported by this browser.");
     }
 
-};
+}
 
 // On click, we change the temperature unit
 function changeTemp() {
-    if (units == "metric") {
+    if (units === "metric") {
         units = "imperial"; // Farenheit
     } else {
         units = "metric"; // Degres
