@@ -4,4 +4,4 @@ list - lists the operating systems, programming languages and IDE input types
 src/bower_components
 node_modules/
 .eslintrc.json
-src/images/.directory
+src/assets/images/.directory
