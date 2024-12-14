@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: mcr.microsoft.com/vscode/devcontainers/javascript-node:18
+    container_name: frontend
+    build:
+      context: .
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    ports:
+      - "3000:3000"
+#    depends_on:
+#      - db
+#    environment:
+#      - DATABASE_URL=postgres://user:pass@db:5432/my_database
+#
+#  db:
+#    image: postgres:15
+#    container_name: db
+#    restart: always
+#    environment:
+#      POSTGRES_USER: user
+#      POSTGRES_PASSWORD: pass
+#      POSTGRES_DB: my_database
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - db_data:/var/lib/postgresql/data
+#
+#volumes:
+#  db_data:
